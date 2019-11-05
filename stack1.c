@@ -1,10 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 typedef struct stack{
 int top;
 int capacity;
 int *array;
 }stack;
+
  stack* createStack(int capacity){
 	 stack* s=(stack*)malloc(sizeof(stack));
 	 s->top=-1;
@@ -12,9 +14,11 @@ int *array;
 	 s->array=(int*)malloc(sizeof(int)*s->capacity);
 	 return s;
  }
+
  int isFull(stack *s){
 	 return (s->top==s->capacity-1);
  }
+
  int isEmpty(stack *s){ return (s->top== -1);}
  /*push(stack *s,int value){
 	 if(!isFull(s)) s->array[++s->top]=value;
@@ -31,6 +35,7 @@ push(stack *s,int value){if(isFull(s))
  int peek(stack *s){if(!isEmpty(s)) return s->array[s->top];
  printf("\t stack is underflow...");
  }
+
  doubleStack(stack *s){s->capacity *=2;
  s->array=realloc(s->array,s->capacity);}
  void deleteStack(stack *s){if(s){ if(s->array) free(s->array); free(s);}  printf("memory is cleaned...");}
