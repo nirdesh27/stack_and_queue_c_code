@@ -44,11 +44,7 @@ node* dequeue(queue *q){
 	q->numberofelements--;
 	return data;
 }
-//int size(queue* q){return ((q->capacity)-q->front+q->rear+1)%q->capacity;}
-/*int peek(queue* q){
-	if(isEmpty(q)) return;
-	return q->array[q->front];
-}*/
+
 deleteQueue(queue* q){
 	if(q){
 		if(q->array) free(q->array);
